@@ -37,9 +37,7 @@ public class RealmDataProvider {
             public HistoryModel call(Realm realm) {
                 HistoryModel historyModel = realm.where(HistoryModel.class).equalTo("name", cityName).findFirst();
                 if (historyModel != null) {
-                    realm.beginTransaction();
                     historyModel.removeFromRealm();
-                    realm.commitTransaction();
                 }
 
                 return historyModel;
