@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="@dimen/padding_default">
+
+    <TextView
+        android:id="@+id/infomation_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:lineSpacingExtra="15dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"/>
+
+    <ImageView
+        android:id="@+id/icon_iv"
+        android:layout_width="@dimen/weather_icon_size"
+        android:layout_height="@dimen/weather_icon_size"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:id="@+id/main_weather_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/icon_iv"
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = versions.jacoco
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
+
+dependencies {
+    compile project(":model")
+    compile "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    compile "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
+    compile "com.squareup.retrofit2:adapter-rxjava:${versions.retrofit}"
+    compile "com.squareup.okhttp3:okhttp:${versions.okHttp}"
+    compile "com.squareup.okhttp3:logging-interceptor:${versions.okHttp}"
+    compile "io.reactivex:rxjava:${versions.rxJava}"
+    compile "com.google.code.gson:gson:${versions.gson}"
+
+    testCompile "junit:junit:${versions.junit}"
+    testCompile "org.mockito:mockito-core:${versions.mockito}"
+    testCompile "com.squareup.okhttp3:mockwebserver:${versions.okHttp}"
+    testCompile "org.assertj:assertj-core:${versions.assertJ}"
+}
+
+test {
+    maxParallelForks 4
+    testLogging config.testOptions
+}
